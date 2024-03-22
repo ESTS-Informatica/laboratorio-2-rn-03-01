@@ -28,6 +28,50 @@ public class CompanyTest
          assertNotNull(company.getClients());
          assertNotNull(company.getSellers());
     }
+    
+    @Test
+    public void testRegisterClient(){
+        assertTrue(company.registerClient(client1));
+    }
+    
+    @Test
+    public void testRegisterClients(){
+        assertTrue(company.registerClient(client1));
+        assertTrue(company.registerClient(client2));
+    }
+    
+    @Test
+    public void testRegisterClientDuplicate(){
+        assertTrue(company.registerClient(client1));
+        assertTrue(company.registerClient(client1));
+    }
+    
+    @Test
+    public void testRegisterClientNull(){
+        assertTrue(company.registerClient(null));
+    }
+    
+    @Test
+    public void testRegisterSeller(){
+        assertTrue(company.registerSeller(seller1));
+    }
+    
+    @Test
+    public void testRegisterSellers(){
+        assertTrue(company.registerSeller(seller1));
+        assertTrue(company.registerSeller(seller2));
+    }
+    
+    @Test
+    public void testRegisterSellerDuplicate(){
+        assertTrue(company.registerSeller(seller1));
+        assertTrue(company.registerSeller(seller1));
+    }
+    
+    @Test
+    public void testRegisterSellerNull(){
+        assertTrue(company.registerSeller(null));
+    }
 
     /**
      * Define a 'fixture' do teste.
