@@ -1,5 +1,4 @@
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,18 +13,24 @@ import org.junit.jupiter.api.Test;
 public class PropertyTest
 {
     Property property1;
+    String description;
     /**
      * Construtor default para a classe de teste PropertyTest
      */
     public PropertyTest()
     {
-        this.property1 = new Property("T3 Monte Belo",150000.0);
+        this.description = "T3 Monte Belo";
     }
-    
+
     @Test
     public void testConstructor(){
         assertEquals(150000.0,property1.getPrice());
-        assertEquals("T3 Monte Belo",property1.getDescription());
+        assertEquals(this.description,property1.getDescription());
+    }
+
+    @Test
+    public void testToString(){
+        assertEquals("Descricao  : "+this.description+"\nPreco : 150000.0", property1.toString());
     }
 
     /**
@@ -36,6 +41,7 @@ public class PropertyTest
     @BeforeEach
     public void setUp()
     {
+        this.property1 = new Property(this.description,150000.0);
     }
 
     /**
