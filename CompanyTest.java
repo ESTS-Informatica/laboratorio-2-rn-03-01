@@ -37,7 +37,7 @@ public class CompanyTest
     @BeforeEach
     public void setUp()
     {
-        this.company=new Company;
+        this.company=new Company();
         this.client1=new User("José Manuel ","911111111","zemanel@yahoo.com");
         this.client2=new User("António Francisco","922222222","tochico@hotmail.com");
         this.seller1=new User("Fernando Fernandes","966777101","fefe@remax.pt");
